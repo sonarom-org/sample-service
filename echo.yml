@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  echo:
+    image: i_echo
+    build:
+      context: .
+      dockerfile: echo.dockerfile
+    container_name: c_echo
+    ports:
+      - 8001:8001
+    volumes:
+      - ./:/app_wd
+    networks:
+      - dev-net
+    command: [ "uvicorn", "app.main:service" , "--reload", "--host",
+               "0.0.0.0", "--port", "8001", "--reload-dir", "." ]
+
+
+networks:
+  dev-net:
+    external:
+      name: dev-net

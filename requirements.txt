@@ -1,0 +1,7 @@
+# REST API
+fastapi==0.65.2
+pydantic==1.8.2
+requests==2.25.1
+python-multipart==0.0.5
+uvicorn==0.13.4
+aiofiles==0.7.0
