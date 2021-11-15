@@ -6,10 +6,9 @@ import os
 usage = 'Usage: run {--remove-prev, --help}'
 
 options = ['--remove-prev']
-extra_args = []
 remove_commands = [
-    'docker stop c_echo',
-    'docker rm c_echo',
+    'docker stop c_sample',
+    'docker rm c_sample',
 ]
 
 option = None
@@ -30,14 +29,11 @@ elif num_arguments == 1:
 else:
     raise ValueError('Bad arguments')
 
-extra_args = ' '.join([v for v in extra_args])
-
 if option == '--remove-prev':
     for command in remove_commands:
         os.system(command)
 
 # Run docker compose
 os.system(
-    'docker-compose -f echo.yml up --build --force-recreate {}'
-    .format(extra_args)
+    'docker-compose -f sample.yml up --build --force-recreate'
 )

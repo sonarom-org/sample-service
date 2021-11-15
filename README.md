@@ -1,5 +1,5 @@
 # Echo service
 
-Simple echo service implemented using [FastAPI](https://fastapi.tiangolo.com/).
+Sample service implemented with [FastAPI](https://fastapi.tiangolo.com/).
 
 

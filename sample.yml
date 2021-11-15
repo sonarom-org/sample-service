@@ -1,12 +1,12 @@
 version: '3.8'
 
 services:
-  echo:
-    image: i_echo
+  sample:
+    image: i_sample
     build:
       context: .
-      dockerfile: echo.dockerfile
-    container_name: c_echo
+      dockerfile: sample.dockerfile
+    container_name: c_sample
     ports:
       - 8002:8002
     volumes:
