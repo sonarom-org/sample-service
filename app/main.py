@@ -63,6 +63,6 @@ async def echo_random_result(
 
 
 @service.get("/ping")
-async def echo_random_result():
+async def ping():
     """Simple ping."""
     return {'ping': 'OK'}
