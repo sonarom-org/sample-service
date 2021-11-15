@@ -28,6 +28,8 @@ async def echo_image(
     It receives a file and returns it.
     """
     img_bytes = await file.read()
+    if isinstance(img_bytes, str):
+        img_bytes = img_bytes.encode()
     img_type = imghdr.what(None, img_bytes)
 
     if img_type is None:
@@ -51,6 +53,8 @@ async def echo_random_result(
     It receives a file and returns a message in JSON format.
     """
     img_bytes = await file.read()
+    if isinstance(img_bytes, str):
+        img_bytes = img_bytes.encode()
     img_type = imghdr.what(None, img_bytes)
 
     if img_type is None:
@@ -66,3 +70,4 @@ async def echo_random_result(
 async def ping():
     """Simple ping."""
     return {'ping': 'OK'}
+
