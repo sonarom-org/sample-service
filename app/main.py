@@ -20,7 +20,7 @@ service.add_middleware(
 # >
 
 
-@service.post("/")
+@service.post("/image")
 async def echo_image(
         file: UploadFile = File(...),
 ):
@@ -45,7 +45,7 @@ async def echo_image(
         return FileResponse(F_OUT.name, media_type=f'image/{img_type}')
 
 
-@service.post("/json")
+@service.post("/data")
 async def echo_random_result(
         file: UploadFile = File(...),
 ):
